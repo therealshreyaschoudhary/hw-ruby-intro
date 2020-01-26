@@ -30,14 +30,27 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, " + name
 end
 
-def starts_with_consonant? s
+def starts_with_consonant?(s)
   # YOUR CODE HERE
+   if /[aeiouAEIOU*]/.match(s[0])
+     return false
+   else
+     return true
+    end
 end
 
-def binary_multiple_of_4? s
+def binary_multiple_of_4?(s)
   # YOUR CODE HERE
+  begin
+    Integer(s)
+    return true if s.to_i % 4 == 0 
+  rescue RuntimeError,ArgumentError, TypeError
+    return false
+  end
+  
 end
 
 # Part 3
