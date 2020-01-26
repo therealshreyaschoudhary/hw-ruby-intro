@@ -2,16 +2,28 @@
 
 # Part 1
 
-def sum arr
+def sum(array)
   # YOUR CODE HERE
+  return array.sum
 end
 
-def max_2_sum arr
+def max_2_sum(array)
   # YOUR CODE HERE
+  if(array.length == 0)
+    return 0
+  elsif array.length == 1
+    return array.sum
+  else
+    return array.sort[-2] + array.sort[-1]
+  end
 end
 
-def sum_to_n? arr, n
+def sum_to_n?(array,n)
   # YOUR CODE HERE
+  #help from https://stackoverflow.com/questions/19371442/how-to-create-a-nested-loop-with-ruby-the-right-way
+  return false if array.empty?
+  return true if array.empty? && n.zero?
+  array.combination(2).any? {|a, b| a + b == n }
 end
 
 # Part 2
